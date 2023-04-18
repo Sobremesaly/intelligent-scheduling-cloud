@@ -1,0 +1,45 @@
+.workBox {
+  display: inline-block;
+}
+
+.showWork {
+  display: flex;
+  color: whitesmoke;
+  margin-left: 6px;
+  width: 43px;
+  border-radius: 3px;
+  line-height: 18px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: rgba(63, 63, 63, 0.5);
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  padding: 5px 3px 5.5px 3px;
+}
+
+.showTime {
+  font-size: 18px;
+  color: whitesmoke;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  display: inline-block;
+}
+
+.showBox {
+  display: inline-block;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.rootContainer {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  justify-content:center;
+  align-items:center;
+  height: 61px;
+  width: 150px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px #b0b0b0;
+}

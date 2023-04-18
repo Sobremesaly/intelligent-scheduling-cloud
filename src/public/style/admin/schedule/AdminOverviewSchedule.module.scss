@@ -1,0 +1,87 @@
+.iconContainer {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.weekIconBox {
+  display: inline-block;
+  padding-left: 50px;
+  line-height: 30px;
+}
+
+.weekContext {
+
+}
+
+.contextBox {
+  display: inline-block;
+}
+
+.topHeadCard {
+  display: flex;
+  width: auto;
+}
+
+.topHead {
+  :global(.ant-select-selector) {
+    box-shadow: none !important;
+  }
+
+  :global(.ant-select-selector) {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    border: none !important;
+    background: none !important;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+  }
+}
+
+.tableDisplay {
+  table {
+    border-collapse: collapse !important;
+  }
+
+  :global(td.ant-table-cell) {
+    padding: 3px !important;
+  }
+
+  :global(th.ant-table-cell) {
+    color: rgba(0, 0, 0, 0.6) !important;
+    font-size: 16px;
+    background: #e6e6e6 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    padding-right: 0 !important;
+    ::before {
+      display: none !important;
+    }
+  }
+
+  :global(.ant-table-cell) {
+    color: #464646 !important;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border: 2px solid #7c7979;
+    border-bottom: 2px solid #7c7979 !important;
+    border-start-start-radius: 0 !important;
+    border-start-end-radius: 0 !important;
+  }
+  :global(.ant-table-thead) {
+    background: #4a89dc;
+  }
+}
+.topCard {
+  width: 99%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid slategray;
+}
+
+.tableShow {
+  width: auto;
+}
+
+.rootContainer {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,137 @@
+.dayShowBox {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.middleContainer {
+  width: 100%;
+  height: 80%;
+  font-size: 22px;
+  padding-top: 1px;
+}
+
+.selectBox {
+  height: 100%;
+  width: 90px;
+  border-radius: 3px;
+  border: 1.6px solid #b6b5b5;
+
+  :global(.ant-select-selector) {
+    border: none !important;
+  }
+  :global(.ant-select-selection-item) {
+    color: #7f7c7c;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding-top: 2.5px !important;
+  }
+
+}
+
+.chooseViewBox {
+  margin-top: 8px;
+  margin-left: 10px;
+  height: 35px;
+
+}
+
+.middleBox {
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 21px;
+  color: #7f7c7c;
+  font-weight: 400;
+  border-left: 1.6px solid #9a9a9a;
+  border-right: 1.6px solid #9a9a9a;
+  height: 100%;
+}
+
+.preButton {
+  color: #7f7c7c;
+  height: 100%;
+  border-radius: 0 !important;
+  border: none !important;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.preBox {
+  display: inline-block;
+  text-align: center;
+}
+
+.changeTimeBox {
+  margin-top: 8px;
+  display: flex;
+  margin-left: 10px;
+  border: 1.6px solid #b6b5b5;
+  border-radius: 3px;
+  height: 35px;
+}
+
+.changeVieBut {
+  height: 35px;
+  cursor: pointer;
+  width: auto;
+  padding-left: 6px;
+  padding-right: 6px;
+  background: none;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #7f7c7c;
+  border-radius: 3px;
+  border: 1.6px solid #b6b5b5;
+}
+
+.controlContainer {
+  display: flex;
+  margin-left: auto;
+  margin-right: 35px;
+}
+
+.changeVieBox {
+
+  color: #3e3e3e;
+  margin-top: 8px;
+  margin-bottom: 15px;
+}
+
+.endTime {
+  font-size: 35px;
+  font-weight: 300;
+}
+
+.startTime {
+  font-size: 35px;
+  font-weight: 300;
+}
+
+.endTimeBox {
+  display: inline-block;
+}
+
+.startTimeBox {
+  display: inline-block;
+}
+
+.showTimeBox {
+  margin-right: auto;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controlBox {
+  display: flex;
+}
+
+.rootContainer {
+  width: auto;
+  margin-left: 40px;
+}

@@ -1,0 +1,161 @@
+.componentRoot {
+    :global(.ant-space) {
+        display: block;
+        width: 100% !important;
+        background-color: #e0dfdf;
+    }
+    :global(.ant-layout-header) {
+        width: 100%;
+        background-color: #dce8e5 !important;
+        height: 80px !important;
+    }
+}
+
+.space {
+    width: 100% !important;
+}
+
+.changeContainer {
+
+}
+
+.changeArea {
+
+}
+
+.dataShowArea {
+
+}
+.dataPicker {
+    :global(.ant-picker) {
+        border-radius: 0 !important;
+    }
+}
+
+.dataPickerArea {
+
+}
+.timePickerArea {
+
+}
+
+.changeMenu {
+    border-bottom: 2px solid #b6b4b3;
+    opacity: 0.6;
+    :global(.ant-menu-item) {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        margin-right: 15px !important;
+    }
+    :global(.ant-menu-item-icon) {
+        font-size: 18px !important;
+    }
+    :global(.ant-menu-title-content) {
+        font-size: 18px;
+        font-weight: 500;
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    :global(.ant-menu-title-content::selection) {
+        color: #1677ff;
+    }
+}
+
+.ant-menu-item {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin-right: 15px !important;
+}
+
+.ant-menu-item-icon {
+    font-size: 18px !important;
+}
+
+
+.ant-menu-title-content::selection {
+    color: #1677ff;
+}
+
+.ant-menu-title-content {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+
+.dataShow {
+    height: 100%;
+    padding-top: 4px;
+    margin-left: 30px;
+}
+
+.dataNumber {
+    font-size: 20px;
+    color: #3f3f3f;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.dataPickerContainer {
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+
+.ant-picker {
+    border-radius: 0 !important;
+}
+
+.dataContainer {
+    display: flex;
+
+}
+
+.reminderText p {
+    opacity: 0;
+    font-size: 16px;
+    color: #636363;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.chooseTimeContainer {
+    margin-left: 20%;
+}
+
+.appName {
+    font-size: 40px;
+    font-weight: 600;
+    color: #3f3f3f;
+    font-family: "Times New Roman", Times, serif;
+    margin-left: 30px;
+}
+
+.appNameContainer {
+    float: left;
+    text-align: center;
+    margin-top: 40px;
+}
+.chooseTimeArea {
+    display: flex;
+    width: 100%;
+}
+
+.middle {
+    width: 100%;
+}
+
+.ant-space {
+    display: block;
+    width: 100% !important;
+    background-color: #e0dfdf;
+}
+
+.ant-layout-header {
+    width: 100%;
+    background-color: #dce8e5 !important;
+    height: 80px !important;
+}
+
+.content {
+    text-align: center;
+    color: #fff;
+    height: 80%;
+    width: 100%;
+}

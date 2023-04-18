@@ -1,0 +1,58 @@
+.rootContainer {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  justify-content:center;
+  align-items:center;
+  height: 61px;
+  width: 150px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px #b0b0b0;
+}
+
+.showBox {
+  display: inline-block;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.showTime {
+  font-size: 18px;
+  color: whitesmoke;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  display: inline-block;
+}
+
+.workBox {
+  display: inline-block;
+}
+
+.showWork {
+  display: flex;
+  color: whitesmoke;
+  margin-left: 6px;
+  width: 43px;
+  border-radius: 3px;
+  line-height: 18px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: rgba(63, 63, 63, 0.5);
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  padding: 5px 3px 5.5px 3px;
+}
+
+.firstBox {
+  width: auto;
+}
+
+.nameBox {
+  color: whitesmoke;
+  font-size: 14px;
+  margin-bottom: 2px;
+  font-weight: 600;
+  margin-top: 5px;
+  font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}

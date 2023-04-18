@@ -1,0 +1,144 @@
+
+
+.workDayBox {
+
+}
+
+.PreferenceBox {
+    width: auto;
+}
+
+.logoutBox {
+    width: 100%;
+    height: 100%;
+    color: #5678a8;
+}
+
+.logoutBox:hover {
+    color: #1677ff;
+}
+
+.setPreferenceBox:hover {
+    color: #1677ff;
+}
+
+.setPreferenceBox {
+    width: 100%;
+    color: #5678a8;
+}
+
+.dropMenu {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    :global(.ant-dropdown-menu-item:hover) {
+        background-color: #e2e7f1 !important;
+    }
+}
+
+.dropBox {
+    position: relative;
+}
+
+.lastName {
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.ant-avatar-string {
+    font-size: 18px;
+}
+
+.userId {
+    height: auto;
+    line-height: 20px;
+}
+
+.userInformation {
+    height: 40px;
+    line-height: 3;
+}
+
+.idNumber {
+    font-size: 14px;
+}
+
+.position {
+    font-weight: 500;
+    color: #3f3f3f;
+    margin-left: 5px;
+}
+
+
+.name {
+    font-size: 18px;
+    color: #2a2a2a;
+    white-space: pre-wrap;
+    margin-right: 8px;
+}
+
+.userInfo {
+    display: inline-block;
+}
+
+.userAvatar:hover {
+    cursor: pointer;
+}
+
+.userAvatar {
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.userAll {
+    display: flex;
+    float: right;
+    height: 100%;
+    width: auto;
+}
+
+.userContainer {
+    width: 50%;
+}
+
+.titleContainer {
+    float: left;
+    margin-top: 6px;
+}
+.titleName {
+    display: inline-block;
+    font-size: 28px;
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    color: rgba(65, 64, 64, 0.88);
+    font-weight: 600;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+}
+.topModal {
+    :global(.ant-modal-title) {
+        font-size: 20px !important;
+        color: #3f3f3f !important;
+        font-weight: 500;
+    }
+}
+
+.imgBox {
+    display: inline-block;
+    width: 12%;
+    height: 100%;
+    background-size:cover;
+    background:url("https://www.polymer-project.org/images/logos/p-logo.svg") no-repeat;
+
+}

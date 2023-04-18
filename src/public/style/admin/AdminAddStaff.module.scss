@@ -1,0 +1,290 @@
+.formLabel {
+    :global(.ant-form-item-required) {
+        padding-top: 16px !important;
+    }
+}
+
+.preferenceList {
+    margin-top: 0;
+    color: red;
+}
+
+.modalContainer {
+    width: auto;
+}
+.anOtherSelect {
+    display: inline-block;
+    width: 220px !important;
+    :global(.ant-select-arrow) {
+        margin-top: -8px !important;
+        font-size: 18px !important;
+        color: #222121 !important;
+        margin-left: 10px !important;
+        position: absolute !important;
+    }
+    :global(.ant-select-selection-item) {
+        position: absolute;
+        padding-inline-end: 0 !important;
+    }
+    :global(.ant-select-selector) {
+        padding: 0 !important;
+        padding-left: 8px !important;
+    }
+}
+.selectContainer {
+    display: inline-block !important;
+    width: 150px !important;
+    :global(.ant-select-arrow) {
+        position: absolute;
+        margin-top: -18px !important;
+        font-size: 18px !important;
+        color: #222121 !important;
+        margin-left: 10px !important;
+    }
+    :global(.ant-select-selection-item) {
+        position: absolute;
+    }
+}
+
+.formContainer {
+    :global(.ant-form) {
+        width: 80% !important;
+        background: none !important;
+        border: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-shadow: none !important;
+    }
+    :global(.ant-input:focus) {
+        box-shadow: none !important;
+    }
+    :global(.ant-input) {
+        border: none !important;
+        border-bottom: 2px solid #454545 !important;
+        border-radius: 0 !important;
+        width: 280px !important;
+        font-size: 16px !important;
+        padding: 4px 10px 0 5px;
+    }
+    :global(.ant-form-item-required) {
+        font-size: 18px !important;
+        line-height: 18px !important;
+        height: 40px !important;
+        font-family: "Times New Roman", Times, serif;
+    }
+    :global(.ant-form-item) {
+        margin-top: 15px !important;
+    }
+    :global(.ant-select-selector) {
+        display: inline-block;
+        width: 80px !important;
+        border: none !important;
+        font-size: 18px !important;
+        font-family: "Times New Roman", Times, serif !important;
+        color: #222121 !important;
+        box-shadow: none !important;
+    }
+    :global(.ant-select-in-form-item) {
+        display: inline-block;
+        width: 120px !important;
+    }
+
+    :global(.ant-select-focused) {
+        border: none !important;
+        box-shadow: none !important;
+    }
+    :global(.ant-form-item-control-input ) {
+        margin-top: 7px !important;
+    }
+}
+.modalTopTitle {
+    font-size: 18px !important;
+    color: #3f3f3f !important;
+    margin-bottom: 20px !important;
+}
+.modalBox {
+    :global(.ant-modal-header) {
+        margin-bottom: 20px !important;
+    }
+
+    :global {
+        .ant-modal {
+            font-size: 18px !important;
+            color: #3f3f3f !important;
+        }
+    }
+}
+
+.userName {
+    color: royalblue;
+}
+
+.workTime {
+    font-size: 18px !important;
+    color: #1677ff;
+}
+
+.userAvatar {
+    display: inline-block;
+    :global(.ant-avatar-string) {
+        font-size: 18px;
+    }
+}
+
+.tableName {
+    margin-left: 5px;
+    display: inline-block;
+    color: #38383a;
+    font-family: Microsoft YaHei, "FZShuTi", Times, serif;
+}
+
+.tableList {
+    :global(.ant-tag) {
+        font-size: 16px !important;
+        height: 30px !important;
+        line-height: 28px !important;
+    }
+
+    :global(.ant-table-cell) {
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        color: #1e1d1d;
+    }
+    :global(.ant-table-row) {
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+    }
+}
+
+.staffArea {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.addButtonArea {
+    margin-top: 50px;
+    :global(.ant-btn) {
+        height: 40px !important;
+        width: 100px !important;
+        text-align: center;
+        border-radius: 6px !important;
+        font-size: 18px;
+    }
+}
+
+.addButton {
+    margin-left: 15%;
+}
+
+.selectBox {
+    margin-top: 50px;
+    margin-left: 50px;
+    :global(.ant-input:hover) {
+        border-bottom: 2px solid #121212;
+    }
+    :global(.ant-input:focus) {
+        border: none !important;
+        border-bottom: 2px solid #121212 !important;
+    }
+    :global(.ant-input::-webkit-input-placeholder) {
+        font-family:Arial,Helvetica,sans-serif;
+        color: #111111;
+    }
+    :global(.ant-input) {
+        font-size: 18px;
+        color: #121212;
+        border-radius: 0 !important;
+        border: none;
+        background: none !important;
+        border-bottom: 2px solid #121212;
+
+    }
+    :global(.anticon-search) {
+        color: #1e1d1d;
+        font-size: 20px;
+    }
+    :global(.ant-input-search-button) {
+        height: 35px;
+        width: 38px;
+        border:none !important;
+        background: none;
+
+    }
+    :global(.ant-input-group-addon) {
+        border:none !important;
+        border-radius: 0 !important;
+        background: none !important;
+        border-bottom: 2px solid #121212 !important;
+    }
+}
+
+.dropBox {
+    text-align: center;
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 30px;
+    width: 150px;
+}
+
+.tabs {
+    :global(.ant-space-item){
+        margin-top: 12px;
+        margin-left: 6px;
+        font-size: 20px;
+        display: inline-block;
+        font-family:Arial,Helvetica,sans-serif;
+        color: #1e1d1d;
+    }
+    :global(.ant-space) {
+        background: none;
+    }
+}
+
+
+.componentRoot {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topArea {
+    display: flex;
+}
+
+.imgBox {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    text-align: center;
+}
+
+.imgBackground {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    display: inline-block;
+    background: #20ba69;
+    font-size: 35px;
+    color: #eeeeee;
+    text-align: center;
+}
+
+.workText {
+    display: inline-block;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.workContent {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.selectBoxArea {
+
+}

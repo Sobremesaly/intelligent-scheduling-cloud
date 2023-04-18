@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Login from './page/Login'
+import AdminMainInterface from './page/admin/AdminMainInterface'
+import CommonMainInterface from './page/common/CommonMainInterface'
+import NoAuthorized from './page/NoAuthorized'
+import NoPage from './page/NoPage'
+import ServiceError from './page/ServiceError'
+import 'dayjs/locale/zh-cn'
+import locale from 'antd/locale/zh_CN'
+import { ConfigProvider } from 'antd'
+/*import rowLineImg from './public/images/pointer.cur'*/
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ConfigProvider locale={locale}>
+      <div className="App" /*style={{ cursor: `url(${rowLineImg}),auto` }}*/>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Login />}></Route>
+            <Route
+              path="/AdminMainInterface"
+              element={<AdminMainInterface />}
+            ></Route>
+            <Route
+              path="/CommonMainInterface"
+              element={<CommonMainInterface />}
+            ></Route>
+            <Route path="/NoAuthorized" element={<NoAuthorized />}></Route>
+            <Route path="/NoPage" element={<NoPage />}></Route>
+            <Route path="/ServiceError" element={<ServiceError />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </ConfigProvider>
+  )
 }
 
-export default App;
+export default App

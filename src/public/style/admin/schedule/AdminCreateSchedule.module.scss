@@ -1,0 +1,56 @@
+.bottomComponent {
+
+}
+
+.storeName {
+  width: auto;
+  margin-left: 40px;
+  margin-bottom: 15px;
+  :global(.ant-tag) {
+    font-size: 20px;
+    height: 32px;
+    line-height: 28px;
+    border: 2px solid #ffd591;
+    color: #d46b08;
+    background: #fff7e6;
+  }
+}
+.middleComponent {
+  width: auto;
+}
+
+.workContent {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.workText {
+  display: inline-block;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.imgBackground {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  display: inline-block;
+  background: #f09130;
+  font-size: 35px;
+  color: #eeeeee;
+  text-align: center;
+}
+
+.rootContainer {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imgBox {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}

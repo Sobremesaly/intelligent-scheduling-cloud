@@ -1,0 +1,56 @@
+.positionTag {
+  margin-left: 5px;
+  font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+.singleOne {
+  display: inline-block;
+  width: 15px;
+  text-align: center;
+}
+
+.workTimeBox {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.iconBox {
+  padding-right: 5px;
+}
+
+.workTime {
+  display: flex;
+}
+
+
+.name {
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-, serif;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 15px;
+}
+
+.contextBox {
+  display: inline-block;
+  padding-left: 10px;
+  margin-right: -15px;
+  max-width: 142px;
+}
+
+.lastName {
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  user-select: none;
+}
+
+.avatarBox {
+  display: flex;
+  align-items: center;
+}
+
+.rootContainer {
+  display: flex;
+  padding: 5px;
+  height: 100%;
+  width: 100%;
+}

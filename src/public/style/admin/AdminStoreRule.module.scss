@@ -1,0 +1,190 @@
+.checkbox {
+  :global(.ant-checkbox-inner) {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  :global(.ant-checkbox-inner::after) {
+    top: 43% !important;
+    inset-inline-start: 17.5% !important;
+    width: 8px !important;
+    height: 14px !important;
+  }
+}
+
+.tableSelect {
+  opacity: 0.7;
+}
+
+
+.storeName {
+  width: auto;
+  margin-left: 40px;
+  margin-bottom: 15px;
+  :global(.ant-tag) {
+    font-size: 20px;
+    height: 32px;
+    border: 2px solid #adc6ff;
+    color: #1d39c4;
+    background: #f0f5ff;
+    line-height: 28px;
+  }
+}
+
+
+.ruleName {
+  color: #1677ff;
+}
+
+.ruleList {
+  :global(.ant-input-number-input) {
+    color: royalblue;
+  }
+  :global(.ant-input-number) {
+    width: 60px !important;
+    font-size: 18px;
+    border: none;
+    padding: 0 !important;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+  }
+  :global(.ant-table-cell) {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #1e1d1d;
+  }
+  :global(.ant-table-row) {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+  }
+}
+
+.ruleArea {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.anotherChooseIcon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: -3px;
+  vertical-align:text-top;
+  font-size: 24px;
+  font-weight: 500;
+  color: #3f3f3f;
+}
+.chooseIcon {
+  position: absolute;
+  left: 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: #e41313;
+}
+
+.boxArea:hover {
+  cursor: pointer;
+}
+
+.boxArea {
+  line-height: 0;
+  position: relative;
+  margin-left: 7px;
+}
+
+.chooseButton:hover {
+  cursor: pointer;
+}
+
+.anotherChooseButton:hover {
+  cursor: pointer;
+  background: none;
+}
+
+.anotherChooseButton {
+  width: 20px;
+  height: 20px;
+  border: 2px solid royalblue;
+  border-radius: 3px;
+  box-shadow: 2px 4px 2px #d2d2d2;
+  padding: 0;
+  vertical-align:text-top;
+  background: none;
+}
+
+.chooseButton {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #797979;
+  border-radius: 3px;
+  box-shadow: 2px 4px 2px #b9b9b9;
+  margin-top: 5px;
+}
+
+.chooseBox {
+  width: auto;
+  margin-left: 10px;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.chooseTitle {
+  display: inline-block;
+  user-select: none;
+  font-size: 20px;
+  color: #232323;
+  margin-top: 0;
+  margin-left: 40px;
+}
+
+.chooseSystemBox {
+  display: flex;
+  width: auto;
+}
+
+.workContent {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 20px;
+  user-select: none;
+  font-weight: 500;
+  color: #333333;
+}
+
+.workText {
+  display: inline-block;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.imgBackground {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  display: inline-block;
+  background: #52b9d4;
+  font-size: 35px;
+  color: #eeeeee;
+  text-align: center;
+}
+
+.imgBox {
+  display: inline-block;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  text-align: center;
+}
+
+.checkBox {
+  display: inline-block;
+  width: 100%;
+}
+
+.bigBox {
+  width: 100%;
+}
+
+.rootComponent {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
