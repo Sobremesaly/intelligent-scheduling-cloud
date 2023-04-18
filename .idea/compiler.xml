@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="rule-service" />
+        <module name="flow-service" />
+        <module name="preference-service" />
+        <module name="store-service" />
+        <module name="producer" />
+        <module name="staff-service" />
+        <module name="scheduling-service" />
+        <module name="feign" />
+        <module name="gateway" />
+        <module name="consumer" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="consumer" options="-parameters" />
+      <module name="feign" options="-parameters" />
+      <module name="flow-service" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="preference-service" options="-parameters" />
+      <module name="producer" options="-parameters" />
+      <module name="rabbitMQ" options="-parameters" />
+      <module name="rule-service" options="-parameters" />
+      <module name="scheduling" options="-parameters" />
+      <module name="scheduling-service" options="-parameters" />
+      <module name="staff-service" options="-parameters" />
+      <module name="store-service" options="-parameters" />
+    </option>
+  </component>
+</project>
