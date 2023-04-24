@@ -43,7 +43,6 @@ public class LoginSuccessHandler implements ServerAuthenticationSuccessHandler {
         params.put("username", username);
         params.put("role", roles);
         params.put("token", token);
-
         ServerWebExchange exchange = webFilterExchange.getExchange();
         ServerHttpResponse response = exchange.getResponse();
         response.getHeaders().setContentType(MediaType.APPLICATION_JSON);

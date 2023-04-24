@@ -26,9 +26,7 @@ public class AccessDeniedHandler implements ServerAccessDeniedHandler {
         JSONObject params = new JSONObject();
         params.put("code", 403);
         params.put("msg", "权限不足！");
-
         ServerHttpResponse response = serverWebExchange.getResponse();
-
         response.getHeaders().setContentType(MediaType.APPLICATION_JSON);
         Mono<Void> ret = null;
         try {

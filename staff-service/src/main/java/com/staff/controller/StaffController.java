@@ -23,7 +23,6 @@ public class StaffController {
 
     @PostMapping("/findUserByEmail")
     String findUserByEmail(@RequestParam("staffEmail") String staffEmail) {
-        System.out.println("email = " + staffEmail);
         return staffService.findUserByEmail(staffEmail);
     }
 

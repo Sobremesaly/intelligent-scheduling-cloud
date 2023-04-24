@@ -1,6 +1,7 @@
 package com.gateway.config;
 
 import com.gateway.Handler.*;
+import com.gateway.filter.ResponseFilter;
 import com.gateway.filter.WebFluxFilter;
 import com.gateway.service.impl.UserDetailsServiceImpl;
 import com.google.common.collect.ImmutableList;
@@ -27,6 +28,7 @@ import javax.annotation.Resource;
  * security基本配置类
  * spring security的bean加载是限于spring的
  * 必须要用@Lazy懒加载，或者使用构造器注入
+ *
  * @author 小叶子
  */
 @Configuration
@@ -37,6 +39,9 @@ public class SecurityConfig {
 
     @Resource
     private WebFluxFilter webFluxFilter;
+
+    @Resource
+    private ResponseFilter responseFilter;
 
     @Resource
     private AccessDeniedHandler accessDeniedHandler;
@@ -86,6 +91,7 @@ public class SecurityConfig {
 
     /**
      * 允许跨域请求
+     *
      * @return 把配置注入到容器
      */
     @Bean
@@ -108,16 +114,22 @@ public class SecurityConfig {
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()
                 .pathMatchers("/**").access(authManagerHandler)
                 .anyExchange().authenticated()
+                .and().exceptionHandling().authenticationEntryPoint(loginLoseHandler)
+                .and().exceptionHandling().accessDeniedHandler(accessDeniedHandler)
                 .and()
-                .addFilterAfter(webFluxFilter, SecurityWebFiltersOrder.FIRST)
                 .securityContextRepository(jwtSecurityContextRepository)
                 .formLogin()
                 .loginPage("/login")
                 .authenticationSuccessHandler(loginSuccessHandler)
                 .authenticationFailureHandler(loginFailedHandler)
-                .and().exceptionHandling().authenticationEntryPoint(loginLoseHandler)
-                .and().exceptionHandling().accessDeniedHandler(accessDeniedHandler)
                 .and().cors().and().csrf().disable();
+
+        // 添加请求过滤器
+        http.addFilterBefore(webFluxFilter, SecurityWebFiltersOrder.AUTHENTICATION);
+        // 添加响应拦截器
+        http.addFilterAfter(responseFilter, SecurityWebFiltersOrder.AUTHENTICATION);
+
         return http.build();
     }
+
 }

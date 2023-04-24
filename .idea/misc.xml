@@ -19,8 +19,10 @@
         <option value="$PROJECT_DIR$/manager-service/pom.xml" />
         <option value="$PROJECT_DIR$/publisher/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitMQ/Producer/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitMQ/entity/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitMQ/nice/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitMQ/untitled/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
       </set>
     </option>
   </component>

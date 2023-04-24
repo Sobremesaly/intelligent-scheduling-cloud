@@ -49,7 +49,7 @@ public class UserDetailsServiceImpl implements ReactiveUserDetailsService {
                 list.add("manager");
             }
             else {
-                list.add("manager");
+                list.add("common");
             }
             UserEntity userEntity = new UserEntity(staff);
             /*通过流去进行转换，其实SimpleGrantedAuthority类型也是字符串*/

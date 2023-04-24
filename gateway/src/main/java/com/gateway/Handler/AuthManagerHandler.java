@@ -1,5 +1,7 @@
 package com.gateway.Handler;
 
+import com.gateway.util.JwtTool;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.security.authorization.AuthorizationDecision;
 import org.springframework.security.authorization.ReactiveAuthorizationManager;
@@ -9,46 +11,64 @@ import org.springframework.security.web.server.authorization.AuthorizationContex
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import reactor.core.publisher.Mono;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import javax.annotation.Resource;
+import java.util.*;
 
 /**
  * 判断用户是否有权访问
+ *
  * @author 小叶子
  */
 @Component
+@Slf4j
 public class AuthManagerHandler implements ReactiveAuthorizationManager<AuthorizationContext> {
+
+    @Resource
+    JwtTool jwtTool;
 
     private final AntPathMatcher antPathMatcher = new AntPathMatcher();
 
     /**
      * 管理者允许访问的路径
      */
-    private final List<String> ADMIN_ALLOW = Arrays.asList("admin/login","admin/test");
+    private final List<String> MANAGER_ALLOW = Arrays.asList("/staff/getStaffInformation", "admin/test");
 
-    private final List<String> USER_ALLOW = Arrays.asList("common/test","common/logout");
+    private final List<String> COMMON_ALLOW = Arrays.asList("/staff/getStaffInformation", "common/logout");
 
     @Override
     public Mono<AuthorizationDecision> check(Mono<Authentication> authentication, AuthorizationContext object) {
+        /*获取一下请求中的信息*/
         ServerHttpRequest request = object.getExchange().getRequest();
         String requestUrl = request.getPath().pathWithinApplication().value();
-        List<String> roles = new ArrayList<>();
-        ADMIN_ALLOW.forEach(mate -> {
-            if (antPathMatcher.match(mate, requestUrl)) {
-                roles.addAll(Collections.singleton(mate));
-            }
-        });
-        USER_ALLOW.forEach(mate -> {
-            if (antPathMatcher.match(mate, requestUrl)) {
-                roles.addAll(Collections.singleton(mate));
-            }
-        });
+        String token = request.getHeaders().getFirst("token");
+        /*解析token中保存的信息*/
+        List<String> roles = jwtTool.getUserRoles(token);
+        /*如果这个人都不具有权限直接拦截*/
         if (roles.isEmpty()) {
             return Mono.just(new AuthorizationDecision(false));
         }
+        String manager = "manager";
+        String common = "common";
+        List<String> matchResult = new ArrayList<>(1);
+        /*遍历判断该用户是否具有这个请求权限*/
+        if (roles.contains(manager)) {
+            MANAGER_ALLOW.forEach(mate -> {
+                if (antPathMatcher.match(mate, requestUrl)) {
+                    matchResult.addAll(Collections.singleton(mate));
+                }
+            });
+        } else if (roles.contains(common)) {
+            COMMON_ALLOW.forEach(mate -> {
+                if (antPathMatcher.match(mate, requestUrl)) {
+                    matchResult.addAll(Collections.singleton(mate));
+                }
+            });
+        }
+        /*如果请求路径和权限不符合就拒绝访问*/
+        if (matchResult.isEmpty()) {
+            return Mono.just(new AuthorizationDecision(false));
+        }
+
         return authentication
                 .filter(Authentication::isAuthenticated)
                 .flatMapIterable(Authentication::getAuthorities)

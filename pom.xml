@@ -19,6 +19,9 @@
         <module>flow-service</module>
         <module>preference-service</module>
         <module>redis</module>
+        <module>entity</module>
+        <module>untitled</module>
+        <module>TestRedis</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
