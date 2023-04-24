@@ -6,14 +6,24 @@ const http = axios.create({
 })
 
 /*添加响应拦截器*/
+
 http.interceptors.response.use(
   response => {
-    if (response.statusText === 'OK') {
-      localStorage.setItem('token', response.data.token)
-      return Promise.resolve(response.data)
-    } else {
-      return Promise.reject(response.data.msg)
+    if (response.data.code === 401) {
+      window.location.href = '/NoLogin'
+    } else if (response.data.code === 402 || response.data.code === 403) {
+      window.location.href = '/NoAuthorized'
+    } else if (response.status === 404) {
+      window.location.href = '/NoPage'
     }
+    /*newToken就是因为token快过期了被刷新了*/
+    if (response.data.newToken !== undefined) {
+      localStorage.setItem('token', response.data.newToken)
+    }
+    if (response.data.token !== undefined && response.statusText === 'OK') {
+      localStorage.setItem('token', response.data.token)
+    }
+    return Promise.resolve(response)
   },
   error => {
     // 请求报错的回调可以和后端协调返回什么状态码，在此根据对应状态码进行对应处理

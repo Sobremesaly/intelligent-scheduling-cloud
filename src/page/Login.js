@@ -39,11 +39,11 @@ function Login() {
       password: password
     }
     const res = await getLogin(params)
-    if (res.code === 200) {
+    if (res.data.code === 200) {
       message.success('登录成功,欢迎您!', 0.5).then(() => {
         setTimeout(() => {
           /*判断一下身份*/
-          if (res.role.indexOf('manager') !== -1) {
+          if (res.data.role.indexOf('manager') !== -1) {
             navigate('/AdminMainInterface')
           } else {
             navigate('/CommonMainInterface')

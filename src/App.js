@@ -6,9 +6,11 @@ import CommonMainInterface from './page/common/CommonMainInterface'
 import NoAuthorized from './page/NoAuthorized'
 import NoPage from './page/NoPage'
 import ServiceError from './page/ServiceError'
+import NoLogin from './page/NoLogin'
 import 'dayjs/locale/zh-cn'
 import locale from 'antd/locale/zh_CN'
 import { ConfigProvider } from 'antd'
+
 /*import rowLineImg from './public/images/pointer.cur'*/
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
             <Route path="/NoAuthorized" element={<NoAuthorized />}></Route>
             <Route path="/NoPage" element={<NoPage />}></Route>
             <Route path="/ServiceError" element={<ServiceError />}></Route>
+            <Route path="/NoLogin" element={<NoLogin />}></Route>
           </Routes>
         </BrowserRouter>
       </div>

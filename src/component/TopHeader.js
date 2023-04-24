@@ -12,7 +12,32 @@ import CheckDayBox from './admin/CheckDayBox'
 import CheckTimeBox from './admin/CheckTimeBox'
 import CheckDayTimeBox from './admin/CheckDayTimeBox'
 import CheckWeekTimeBox from './admin/CheckWeekTimeBox'
+import { getStaffInformation } from '../api/staff/getStaffInformation'
+
 function TopHeader() {
+  let positionMap = new Map()
+  positionMap.set('manager', '经理')
+  positionMap.set('common', '店员')
+  /*初始时刻去请求一下用户信息过来*/
+  const [userInformation, setUserInformation] = useState({})
+  const [lastName, setLastName] = useState('')
+  async function doGetStaffInformation() {
+    let params = {
+      staffEmail: '3474742326@qq.com'
+    }
+    return await getStaffInformation(params)
+  }
+  useEffect(() => {
+    /*标准的异步函数写法*/
+    doGetStaffInformation()
+      .then(res => {
+        setUserInformation(res.data.result)
+        setLastName(res.data.result.staffName[0])
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }, [])
   /*用来随机产生颜色*/
   const ColorList = [
     '#f56a00',
@@ -84,7 +109,7 @@ function TopHeader() {
           <div className={styles.userAvatar}>
             <Avatar size="large" style={{ backgroundColor: color }}>
               <div className={styles.dropBox}>
-                <span className={styles.lastName}>洪</span>
+                <span className={styles.lastName}>{lastName}</span>
                 <Dropdown
                   className={styles.dropMenu}
                   menu={{
@@ -103,11 +128,15 @@ function TopHeader() {
           </div>
           <div className={styles.userInfo}>
             <div className={styles.userInformation}>
-              <span className={styles.name}>洪先生</span>
-              <span className={styles.position}>经理</span>
+              <span className={styles.name}>{userInformation.staffName}</span>
+              <span className={styles.position}>
+                {positionMap.get(userInformation.staffPosition)}
+              </span>
             </div>
             <div className={styles.userId}>
-              <span className={styles.idNumber}>ID : 130524</span>
+              <span className={styles.idNumber}>
+                ID : {userInformation.staffId}
+              </span>
             </div>
           </div>
         </div>
