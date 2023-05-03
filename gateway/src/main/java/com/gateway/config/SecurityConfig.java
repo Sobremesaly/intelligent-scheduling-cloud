@@ -37,6 +37,11 @@ import javax.annotation.Resource;
 @Lazy
 public class SecurityConfig {
 
+    @Bean
+    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
+        return http.authorizeExchange().anyExchange().permitAll().and().csrf().disable().build();
+    }
+
     @Resource
     private WebFluxFilter webFluxFilter;
 

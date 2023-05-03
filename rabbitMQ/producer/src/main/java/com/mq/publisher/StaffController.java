@@ -28,4 +28,13 @@ public class StaffController {
         }
         return (rabbitTemplate.convertSendAndReceiveAsType("staff.direct", "query", staffEmail, new ParameterizedTypeReference<>() {}));
     }
+
+    @RequestMapping("/getAllStaff")
+    public String getAllStaff() {
+        String allStaffKey = "allStaff";
+        if(redisUtils.get(allStaffKey) != null) {
+            return redisUtils.get(allStaffKey).toString();
+        }
+        return (rabbitTemplate.convertSendAndReceiveAsType("staff.direct", "all", allStaffKey, new ParameterizedTypeReference<>() {}));
+    }
 }

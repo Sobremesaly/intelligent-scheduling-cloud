@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.staff.service.StaffService;
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author 小叶子
@@ -41,6 +42,20 @@ public class StaffServiceImpl implements StaffService {
             wrapper.eq("staff_email", email);
             Staff staff = staffMapper.selectOne(wrapper);
             map.put("result", staff);
+            map.put("flag", "right");
+        } catch (Exception e) {
+            map.put("flag", "error");
+        }
+        return JSON.toJSONString(map);
+    }
+
+    @Override
+    public String getAllStaff() {
+        HashMap<String, Object> map = new HashMap<>(2);
+        try {
+            QueryWrapper<Staff> wrapper = new QueryWrapper<>();
+            List<Staff> list = staffMapper.selectList(wrapper);
+            map.put("result", list);
             map.put("flag", "right");
         } catch (Exception e) {
             map.put("flag", "error");

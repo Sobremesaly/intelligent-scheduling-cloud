@@ -26,4 +26,8 @@ public class StaffController {
         return staffService.findUserByEmail(staffEmail);
     }
 
+    @PostMapping("/getAllStaff")
+    String getAllStaff() {
+        return staffService.getAllStaff();
+    }
 }

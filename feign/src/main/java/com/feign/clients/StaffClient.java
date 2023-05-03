@@ -26,4 +26,11 @@ public interface StaffClient {
      */
     @PostMapping("staff/findUserByEmail")
     String findUserByEmail(@RequestParam("staffEmail") String staffEmail);
+
+    /**
+     * 获取所有的用户信息
+     * @return 包含所有信息的json序列
+     */
+    @PostMapping("staff/getAllStaff")
+    String getAllStaff();
 }

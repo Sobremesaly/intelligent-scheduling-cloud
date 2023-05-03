@@ -22,6 +22,13 @@ public class StaffListener {
     @Resource
     private RedisUtils redisUtils;
 
+    @RabbitListener(queues = "staff.queue.all")
+        public String getAllStaff() {
+        String allStaffKey = "allStaff";
+        redisUtils.set(allStaffKey, staffClient.getAllStaff());
+        return staffClient.getAllStaff();
+    }
+
     @RabbitListener(queues = "staff.queue.query")
     public String getStaffInformation(String staffEmail) {
         /*因为redis中没有所以要写入*/

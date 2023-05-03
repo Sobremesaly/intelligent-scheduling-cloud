@@ -7,13 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="rule-service" />
-        <module name="flow-service" />
+        <module name="sentinel" />
+        <module name="seate" />
         <module name="preference-service" />
-        <module name="store-service" />
-        <module name="producer" />
         <module name="Redis" />
         <module name="staff-service" />
+        <module name="rule-service" />
+        <module name="flow-service" />
+        <module name="store-service" />
+        <module name="producer" />
         <module name="scheduling-service" />
         <module name="feign" />
         <module name="gateway" />
@@ -42,6 +44,8 @@
       <module name="rule-service" options="-parameters" />
       <module name="scheduling" options="-parameters" />
       <module name="scheduling-service" options="-parameters" />
+      <module name="seate" options="-parameters" />
+      <module name="sentinel" options="-parameters" />
       <module name="staff-service" options="-parameters" />
       <module name="store-service" options="-parameters" />
       <module name="untitled" options="-parameters" />

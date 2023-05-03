@@ -31,9 +31,9 @@ public class AuthManagerHandler implements ReactiveAuthorizationManager<Authoriz
     /**
      * 管理者允许访问的路径
      */
-    private final List<String> MANAGER_ALLOW = Arrays.asList("/staff/getStaffInformation", "admin/test");
+    private final List<String> MANAGER_ALLOW = Arrays.asList("/staff/getStaffInformation", "/staff/getAllStaff");
 
-    private final List<String> COMMON_ALLOW = Arrays.asList("/staff/getStaffInformation", "common/logout");
+    private final List<String> COMMON_ALLOW = Arrays.asList("/staff/getStaffInformation", "");
 
     @Override
     public Mono<AuthorizationDecision> check(Mono<Authentication> authentication, AuthorizationContext object) {

@@ -13,6 +13,9 @@
     <file url="file://$PROJECT_DIR$/rule-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/scheduling-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/scheduling-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/seate/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sentinel/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sentinel/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/staff-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/store-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/store-service/src/main/resources" charset="UTF-8" />

@@ -2,9 +2,9 @@ server:
   port: 8081
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/schedule?useSSL=false
-    username: root
-    password: hyf5201314
+    url: jdbc:mysql://8.130.69.82:3306/schedule?useSSL=false
+    username: schedule
+    password: hyfyhhd
     driver-class-name: com.mysql.cj.jdbc.Driver
 #  shardingsphere:
 #    sharding:
