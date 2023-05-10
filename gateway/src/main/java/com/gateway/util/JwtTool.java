@@ -6,7 +6,6 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.Data;
 import org.springframework.stereotype.Component;
-
 import java.util.Date;
 import java.util.List;
 
@@ -87,7 +86,6 @@ public class JwtTool {
                     .parseClaimsJws(token)
                     .getBody();
             if (claims != null) {
-
                 return (List<String>) claims.get("roles");
             }
         } catch (Exception e) {

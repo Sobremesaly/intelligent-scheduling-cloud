@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 
 import java.util.stream.Collectors;
 
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
  * @author 小叶子
  */
 @SpringBootApplication
+@EnableWebFluxSecurity
 @EnableFeignClients(clients = StaffClient.class, defaultConfiguration = DefaultFeignConfiguration.class)
 public class GatewayApplication {
     public static void main(String[] args) {

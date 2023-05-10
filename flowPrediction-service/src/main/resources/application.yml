@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    url: jdbc:mysql://8.130.69.82:3306/schedule?useSSL=false
+    username: schedule
+    password: hyfyhhd
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  type-aliases-package: flowPrediction.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+pattern:
+  name: 本地环境local

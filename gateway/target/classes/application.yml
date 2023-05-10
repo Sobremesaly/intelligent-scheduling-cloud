@@ -6,25 +6,20 @@ logging:
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
 spring:
-  redis:
-    database: 0
-    host: 116.204.64.181
-    port: 6379
-    jedis.pool.max-idle: 100
-    jedis.pool.max-wait: -1ms
-    jedis.pool.min-idle: 2
-    timeout: 2000ms
   application:
     name: gateway
   cloud:
     nacos:
       server-addr: 8.130.69.82:8848 # nacos地址
-      #server-addr: nacos:8848 # nacos地址
     gateway:
       routes:
-        - id: route-to-rabbitMQproducer # 路由标示，必须唯一
+        - id: route-to-rabbitMQproducer # 路由标识，必须唯一
           uri: lb://rabbitMQproducer # 路由的目标地址
           predicates: # 路由断言，判断请求是否符合规则
-          - Path=/staff/** # 路径断言，让请求都先进入消息队列微服务
-      default-filters:
-        - AddRequestHeader=Truth,Itcast is freaking awesome!
+            - Path=/staff/** # 路径断言，让请求都先进入消息队列微服务
+        - id: route-to-login
+          uri: localhost:10010/login
+          predicates:
+            - Path=/login
+        #default-filters:
+        #- AddRequestHeader=Truth,Itcast is freaking awesome!

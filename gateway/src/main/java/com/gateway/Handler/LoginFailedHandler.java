@@ -29,8 +29,8 @@ public class LoginFailedHandler implements ServerAuthenticationFailureHandler {
         Mono<Void> ret = null;
         try {
             ret = response.writeAndFlushWith(Flux.just(ByteBufFlux.just(response.bufferFactory().wrap(params.toJSONString().getBytes("UTF-8")))));
-        } catch (UnsupportedEncodingException e0) {
-            e0.printStackTrace();
+        } catch (UnsupportedEncodingException exception) {
+            exception.printStackTrace();
         }
         return ret;
     }

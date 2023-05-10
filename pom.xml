@@ -16,12 +16,13 @@
         <module>staff-service</module>
         <module>store-service</module>
         <module>rule-service</module>
-        <module>flow-service</module>
         <module>preference-service</module>
         <module>redis</module>
         <module>entity</module>
         <module>sentinel</module>
         <module>seate</module>
+        <module>flowPrediction-service</module>
+        <module>spring-security</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -81,11 +82,6 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>2.7.0</version>
         </dependency>
     </dependencies>
     <build>

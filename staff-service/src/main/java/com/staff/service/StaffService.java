@@ -7,7 +7,6 @@ package com.staff.service;
 public interface StaffService {
     /**
      * 根据用户的邮箱号，密码，和身份去校验是否存在该用户
-     *
      * @param email    邮箱地址，可作为登录名
      * @param password 账号密码
      * @param identity 身份标识

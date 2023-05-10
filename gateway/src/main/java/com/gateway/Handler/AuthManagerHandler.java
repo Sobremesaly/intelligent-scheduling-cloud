@@ -20,7 +20,6 @@ import java.util.*;
  * @author 小叶子
  */
 @Component
-@Slf4j
 public class AuthManagerHandler implements ReactiveAuthorizationManager<AuthorizationContext> {
 
     @Resource
@@ -80,6 +79,7 @@ public class AuthManagerHandler implements ReactiveAuthorizationManager<Authoriz
 
     @Override
     public Mono<Void> verify(Mono<Authentication> authentication, AuthorizationContext object) {
+
         return null;
     }
 }

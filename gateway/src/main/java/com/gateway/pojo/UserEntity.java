@@ -17,7 +17,7 @@ import java.util.List;
  * @author 小叶子
  */
 @Data
-@TableName("user_info")
+@TableName("staff")
 public class UserEntity implements UserDetails {
     @TableId(type = IdType.AUTO, value = "user_id")
     private String userId;

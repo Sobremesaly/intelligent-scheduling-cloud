@@ -13,7 +13,7 @@
         <module name="Redis" />
         <module name="staff-service" />
         <module name="rule-service" />
-        <module name="flow-service" />
+        <module name="flowPrediction-service" />
         <module name="store-service" />
         <module name="producer" />
         <module name="scheduling-service" />
@@ -26,6 +26,8 @@
     <bytecodeTargetLevel>
       <module name="Entity" target="11" />
       <module name="redis" target="11" />
+      <module name="security" target="11" />
+      <module name="spring-security" target="11" />
       <module name="untitled" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -35,7 +37,7 @@
       <module name="consumer" options="-parameters" />
       <module name="entity" options="-parameters" />
       <module name="feign" options="-parameters" />
-      <module name="flow-service" options="-parameters" />
+      <module name="flowPrediction-service" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="preference-service" options="-parameters" />
       <module name="producer" options="-parameters" />
@@ -45,7 +47,9 @@
       <module name="scheduling" options="-parameters" />
       <module name="scheduling-service" options="-parameters" />
       <module name="seate" options="-parameters" />
+      <module name="security" options="-parameters" />
       <module name="sentinel" options="-parameters" />
+      <module name="spring-security" options="-parameters" />
       <module name="staff-service" options="-parameters" />
       <module name="store-service" options="-parameters" />
       <module name="untitled" options="-parameters" />

@@ -10,7 +10,7 @@ public class TryTest {
     @Test
     public void testEncode() {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        System.out.println(passwordEncoder.encode("gmbsf520"));
+        System.out.println(passwordEncoder.encode("password"));
     }
 
 }

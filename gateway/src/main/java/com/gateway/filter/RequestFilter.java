@@ -1,11 +1,11 @@
 package com.gateway.filter;
-
 import com.alibaba.cloud.commons.lang.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.gateway.util.JwtTool;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
@@ -13,15 +13,15 @@ import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
 import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
+
 import javax.annotation.Resource;
 
 /**
- * 自定义过滤器
+ * 响应拦截器，主要作用是更新一下token信息
  * @author 小叶子
  */
-@Slf4j
 @Component
-public class WebFluxFilter implements WebFilter {
+public class RequestFilter implements WebFilter {
     @Resource
     private JwtTool jwtTool;
 
@@ -44,6 +44,7 @@ public class WebFluxFilter implements WebFilter {
         String token = exchange.getRequest().getHeaders().getFirst("token");
         /*没有携带token判定为未登录状态*/
         if (StringUtils.isBlank(token)) {
+            response.setStatusCode(HttpStatus.valueOf(401));
             JSONObject jsonObject = setResultErrorMsg(401,"还没登录");
             DataBuffer buffer = response.bufferFactory().wrap(jsonObject.toJSONString().getBytes());
             /*封装成响应去反馈*/
@@ -52,12 +53,14 @@ public class WebFluxFilter implements WebFilter {
         boolean isTrue = jwtTool.verityToken(token);
         /*验证token是否合法*/
         if (!isTrue) {
+            response.setStatusCode(HttpStatus.valueOf(402));
             JSONObject jsonObject = setResultErrorMsg(402,"未经授权的token");
             DataBuffer buffer = response.bufferFactory().wrap(jsonObject.toJSONString().getBytes());
             return response.writeWith(Mono.just(buffer));
         }
         String username = jwtTool.getUserName(token);
         if (StringUtils.isEmpty(username)) {
+            response.setStatusCode(HttpStatus.valueOf(403));
             JSONObject jsonObject = setResultErrorMsg(403,"不存在该用户");
             DataBuffer buffer = response.bufferFactory().wrap(jsonObject.toJSONString().getBytes());
             return response.writeWith(Mono.just(buffer));
@@ -71,4 +74,5 @@ public class WebFluxFilter implements WebFilter {
         jsonObject.put("message", msg);
         return jsonObject;
     }
+
 }

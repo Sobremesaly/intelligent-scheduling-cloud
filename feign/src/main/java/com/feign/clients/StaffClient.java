@@ -1,4 +1,5 @@
 package com.feign.clients;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,5 +33,6 @@ public interface StaffClient {
      * @return 包含所有信息的json序列
      */
     @PostMapping("staff/getAllStaff")
+    @SentinelResource(value="hello")
     String getAllStaff();
 }

@@ -1,8 +1,8 @@
 package com.gateway.config;
 
 import com.gateway.Handler.*;
+import com.gateway.filter.RequestFilter;
 import com.gateway.filter.ResponseFilter;
-import com.gateway.filter.WebFluxFilter;
 import com.gateway.service.impl.UserDetailsServiceImpl;
 import com.google.common.collect.ImmutableList;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.authentication.UserDetailsRepositoryReactiveAuthenticationManager;
-import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.SecurityWebFiltersOrder;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -19,8 +18,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.reactive.CorsConfigurationSource;
-import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import javax.annotation.Resource;
 
@@ -33,17 +32,11 @@ import javax.annotation.Resource;
  */
 @Configuration
 @EnableWebFluxSecurity
-@EnableReactiveMethodSecurity
 @Lazy
 public class SecurityConfig {
 
-    @Bean
-    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
-        return http.authorizeExchange().anyExchange().permitAll().and().csrf().disable().build();
-    }
-
     @Resource
-    private WebFluxFilter webFluxFilter;
+    private RequestFilter requestFilter;
 
     @Resource
     private ResponseFilter responseFilter;
@@ -77,6 +70,8 @@ public class SecurityConfig {
             "/logout",
     };
 
+
+
     @Bean
     public ReactiveAuthenticationManager authenticationManager() {
         UserDetailsRepositoryReactiveAuthenticationManager authenticationManager = new UserDetailsRepositoryReactiveAuthenticationManager(userDetailsServiceImpl);
@@ -94,7 +89,7 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    /**
+   /**
      * 允许跨域请求
      *
      * @return 把配置注入到容器
@@ -111,30 +106,30 @@ public class SecurityConfig {
         return source;
     }
 
+
+
     @Bean
     SecurityWebFilterChain webFluxSecurityFilterChain(ServerHttpSecurity http) {
         http.authorizeExchange()
-                //无需进行权限过滤的请求路径
                 .pathMatchers(EXCLUDED_AUTH_PAGES).permitAll()
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()
                 .pathMatchers("/**").access(authManagerHandler)
                 .anyExchange().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .authenticationManager(authenticationManager())
+                .authenticationSuccessHandler(loginSuccessHandler)
+                .authenticationFailureHandler(loginFailedHandler)
                 .and().exceptionHandling().authenticationEntryPoint(loginLoseHandler)
                 .and().exceptionHandling().accessDeniedHandler(accessDeniedHandler)
                 .and()
+                .addFilterAt(requestFilter, SecurityWebFiltersOrder.FIRST)
+                .addFilterAt(responseFilter, SecurityWebFiltersOrder.LAST)
                 .securityContextRepository(jwtSecurityContextRepository)
-                .formLogin()
-                .loginPage("/login")
-                .authenticationSuccessHandler(loginSuccessHandler)
-                .authenticationFailureHandler(loginFailedHandler)
-                .and().cors().and().csrf().disable();
-
-        // 添加请求过滤器
-        http.addFilterBefore(webFluxFilter, SecurityWebFiltersOrder.AUTHENTICATION);
-        // 添加响应拦截器
-        http.addFilterAfter(responseFilter, SecurityWebFiltersOrder.AUTHENTICATION);
-
+                .cors().disable().csrf().disable();
         return http.build();
     }
+
 
 }

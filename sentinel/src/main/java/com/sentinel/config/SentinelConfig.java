@@ -15,17 +15,12 @@ import java.util.List;
 public class SentinelConfig {
 
     @PostConstruct
-    public void init() {
-        // 配置规则
-        initFlowRules();
-    }
-
-    private void initFlowRules() {
+    public void initFlowRules() {
         List<FlowRule> rules = new ArrayList<>();
         FlowRule rule = new FlowRule();
-        rule.setResource("test");
+        rule.setResource("hello");
+        rule.setCount(1);
         rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
-        rule.setCount(10);
         rules.add(rule);
         FlowRuleManager.loadRules(rules);
     }

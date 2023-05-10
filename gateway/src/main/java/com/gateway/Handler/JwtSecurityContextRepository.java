@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
 /**
  * @author 小叶子
  */
-@Slf4j
 @Component
 public class JwtSecurityContextRepository implements ServerSecurityContextRepository  {
 

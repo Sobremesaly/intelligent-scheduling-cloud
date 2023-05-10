@@ -32,6 +32,7 @@ public class UserDetailsServiceImpl implements ReactiveUserDetailsService {
 
     @Override
     public Mono<UserDetails> findByUsername(String username) {
+        System.err.println("I get it");
         return Mono.fromCallable(()->{
             ConcurrentHashMap<String, Object> map = JSONObject.parseObject(staffClient.findUserByEmail(username), new TypeReference<ConcurrentHashMap<String, Object>>() {
             });
